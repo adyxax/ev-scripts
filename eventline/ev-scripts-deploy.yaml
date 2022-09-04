@@ -1,4 +1,15 @@
 name: "ev-scripts-deploy"
 steps:
   - script:
-      path: "ev-scripts-deploy.sh"
+      path: "../common/make-run.sh"
+identities:
+  - eventline-self
+parameters:
+- name: name
+  type: string
+  default: "ev-scripts-deploy"
+  environment: NAME
+- name: url
+  type: string
+  default: "https://git.adyxax.org/adyxax/ev-scripts"
+  environment: URL
