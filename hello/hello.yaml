@@ -1,8 +1,0 @@
-name: "hello"
-trigger:
-  event: "time/tick"
-  parameters:
-    periodic: 60
-steps:
-  - code: |
-      echo "Hello world!"

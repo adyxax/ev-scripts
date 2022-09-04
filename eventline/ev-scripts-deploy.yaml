@@ -1,0 +1,4 @@
+name: "ev-scripts-deploy"
+steps:
+  - script:
+      path: "ev-scripts-deploy.sh"
