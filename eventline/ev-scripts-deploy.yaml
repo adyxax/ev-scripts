@@ -1,7 +1,14 @@
 name: "ev-scripts-deploy"
 steps:
-  - script:
-      path: "../common/make-run.sh"
+  - label: git clone
+    script:
+      path: "../common/git-clone.sh"
+  - label: make run
+    script:
+      path: "../common/make.sh"
+  - label: clean
+    script:
+      path: "../common/clean.sh"
 identities:
   - eventline-self
 parameters:
@@ -9,6 +16,10 @@ parameters:
   type: string
   default: "ev-scripts-deploy"
   environment: NAME
+- name: target
+  type: string
+  default: "run"
+  environment: TARGET
 - name: url
   type: string
   default: "https://git.adyxax.org/adyxax/ev-scripts"
