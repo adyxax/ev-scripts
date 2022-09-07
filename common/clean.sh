@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Input environment:
-# - NAME: a name for the script/tasks
+NAME=$1
 
 rm -rf "/tmp/${NAME}"

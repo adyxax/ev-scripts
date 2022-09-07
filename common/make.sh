@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Input environment:
-# - NAME: a name for the script/tasks
-# - TARGET: the Makefile target to run
+NAME=$1
+TARGET=$2
 
 WORKDIR="/tmp/${NAME}"
 
