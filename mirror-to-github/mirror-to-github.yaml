@@ -1,0 +1,12 @@
+name: "mirror-to-github"
+steps:
+  - label: mirror
+    script:
+      path: "mirror-to-github.sh"
+identities:
+  - github-mirror
+parameters:
+- name: repo
+  type: string
+  environment: REPO
+  default: "adyxax/non-existent"
