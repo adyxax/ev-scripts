@@ -1,0 +1,30 @@
+name: "www-deploy"
+steps:
+  - label: git clone
+    script:
+      path: "../common/git-clone.sh"
+      arguments:
+        - "www-deploy"
+        - "https://git.adyxax.org/adyxax/www"
+  - label: build images
+    script:
+      path: "build-images.sh"
+      arguments:
+        - "www-deploy"
+  - label: make push
+    script:
+      path: "../common/make.sh"
+      arguments:
+        - "www-deploy"
+        - "push"
+  - label: clean
+    script:
+      path: "../common/clean.sh"
+      arguments:
+        - "www-deploy"
+runner:
+  identity: "ssh-myth"
+  name: "ssh"
+  parameters:
+    host: "myth.adyxax.org"
+    user: "root"
