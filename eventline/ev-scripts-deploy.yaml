@@ -4,18 +4,14 @@ steps:
     script:
       path: "../common/git-clone.sh"
       arguments:
-        - "ev-scripts-deploy"
         - "https://git.adyxax.org/adyxax/ev-scripts"
   - label: make run
     script:
       path: "../common/make.sh"
       arguments:
-        - "ev-scripts-deploy"
         - "run"
   - label: clean
     script:
       path: "../common/clean.sh"
-      arguments:
-        - "ev-scripts-deploy"
 identities:
   - eventline-self

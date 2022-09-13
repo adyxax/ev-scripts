@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-NAME=$1
-
-rm -rf "/tmp/${NAME}"
+rm -rf "/tmp/${EVENTLINE_JOB_NAME}"

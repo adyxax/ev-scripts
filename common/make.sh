@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-NAME=$1
-TARGET=$2
+TARGET=$1
 
-WORKDIR="/tmp/${NAME}"
+WORKDIR="/tmp/${EVENTLINE_JOB_NAME}"
 
 cleanup() {
 	rm -rf "${WORKDIR}"
