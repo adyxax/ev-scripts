@@ -1,5 +1,8 @@
 name: "www-build"
 steps:
+  - label: buildah login
+    script:
+      path: "../common/buildah-login.sh"
   - label: git clone
     script:
       path: "../common/git-clone.sh"
@@ -22,6 +25,8 @@ steps:
       path: "../common/clean.sh"
       arguments:
         - "www-build"
+identities:
+  - quay-io
 runner:
   identity: "ssh-myth"
   name: "ssh"
