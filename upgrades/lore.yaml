@@ -1,0 +1,11 @@
+name: "lore"
+steps:
+  - label: upgrade
+    script:
+      path: "pkg.sh"
+runner:
+  identity: "eventline-ssh"
+  name: "ssh"
+  parameters:
+    host: "lore.adyxax.org"
+    user: "root"

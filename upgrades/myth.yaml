@@ -1,0 +1,11 @@
+name: "myth"
+steps:
+  - label: upgrade
+    script:
+      path: "apk.sh"
+runner:
+  identity: "eventline-ssh"
+  name: "ssh"
+  parameters:
+    host: "myth.adyxax.org"
+    user: "root"

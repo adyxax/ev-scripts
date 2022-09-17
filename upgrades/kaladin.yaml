@@ -1,0 +1,11 @@
+name: "kaladin"
+steps:
+  - label: upgrade
+    script:
+      path: "pkg.sh"
+runner:
+  identity: "eventline-ssh"
+  name: "ssh"
+  parameters:
+    host: "kaladin.adyxax.org"
+    user: "root"

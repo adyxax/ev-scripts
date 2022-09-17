@@ -6,7 +6,10 @@ check: ## make check  # Check syntax of eventline jobs
 
 .PHONY: run
 run: ## make run    # deploy all jobs
-	evcli deploy-jobs */*.yaml
+	evcli deploy-jobs eventline/*.yaml \
+		mirror-to-github/*.yaml \
+		www/*.yaml
+	evcli deploy-jobs -p upgrades upgrades/*.yaml
 
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
