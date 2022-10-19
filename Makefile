@@ -7,6 +7,7 @@ check: ## make check  # Check syntax of eventline jobs
 .PHONY: run
 run: ## make run    # deploy all jobs
 	evcli deploy-jobs eventline/*.yaml \
+		grenade-brothers/*.yaml \
 		mirror-to-github/*.yaml \
 		www/*.yaml
 	evcli deploy-jobs -p upgrades upgrades/*.yaml
