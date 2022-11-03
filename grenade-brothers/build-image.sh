@@ -11,7 +11,7 @@ trap cleanup EXIT
 
 ret=0; buildah images adyxax/alpine &>/dev/null || ret=$?
 if [[ "${ret}" != 0 ]]; then
-	buildah rmi --all
+	buildah rmi --all || true
 	ALPINE_LATEST=$(curl --silent https://dl-cdn.alpinelinux.org/alpine/latest-stable/releases/x86_64/ |
 		perl -lane '$latest = $1 if $_ =~ /^<a href="(alpine-minirootfs-\d+\.\d+\.\d+-x86_64\.tar\.gz)">/; END {print $latest}'
 	)
