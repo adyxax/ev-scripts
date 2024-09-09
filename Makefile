@@ -2,14 +2,22 @@ SHELL:=bash
 
 .PHONY: check
 check: ## make check  # Check syntax of eventline jobs
-	evcli deploy-jobs --dry-run */*.yaml
+	evcli deploy-jobs --dry-run eventline/*.yaml \
+              certificates/*.yaml \
+              grenade-brothers/*.yaml \
+              mirror-to-github/*.yaml \
+	      ods/*.yaml \
+              www/*.yaml
+	evcli deploy-jobs --dry-run -p upgrades upgrades/*.yaml
 
 .PHONY: run
 run: ## make run    # deploy all jobs
 	evcli deploy-jobs eventline/*.yaml \
-		grenade-brothers/*.yaml \
-		mirror-to-github/*.yaml \
-		www/*.yaml
+              certificates/*.yaml \
+	      grenade-brothers/*.yaml \
+	      mirror-to-github/*.yaml \
+	      ods/*.yaml \
+	      www/*.yaml
 	evcli deploy-jobs -p upgrades upgrades/*.yaml
 
 help:

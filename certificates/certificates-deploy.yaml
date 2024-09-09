@@ -1,0 +1,9 @@
+name: "certificates-deploy"
+steps:
+  - label: make deploy
+    script:
+      path: "./certificates-deploy.sh"
+identities:
+  - adyxax-org-fullchain
+  - adyxax-org-key
+  - ssh
