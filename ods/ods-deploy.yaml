@@ -13,9 +13,3 @@ steps:
   - label: clean
     script:
       path: "../common/clean.sh"
-runner:
-  identity: "ssh-myth"
-  name: "ssh"
-  parameters:
-    host: "myth.adyxax.org"
-    user: "root"
