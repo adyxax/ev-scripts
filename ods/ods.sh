@@ -23,7 +23,7 @@ podman run --rm -ti -v "${WORKDIR}:/mnt" \
 SSHKEY="${EVENTLINE_DIR}/identities/ssh/private_key"
 SSHOPTS="-i ${SSHKEY} -o StrictHostKeyChecking=accept-new"
 
-rsync -e "ssh ${SSHOPTS}" "${WORKDIR}/ods" root@ods.adyxax.org:/srv/ods/
+rsync -e "ssh ${SSHOPTS}" "${WORKDIR}/ods" root@ods.adyxax.org:/usr/local/bin/
 ssh ${SSHOPTS} root@ods.adyxax.org "systemctl restart ods"
 
 trap - EXIT
